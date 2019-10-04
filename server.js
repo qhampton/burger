@@ -16,6 +16,7 @@ app.use(express.json());
 // Set Handlebars.
 var exphbs = require("express-handlebars");
 
+//show where to look to main handlebars to display
 app.engine("handlebars", exphbs({
     defaultLayout: "main"
 }));

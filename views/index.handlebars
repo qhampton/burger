@@ -1,22 +1,29 @@
-<div class="container">
-    <div class="row">
-    <div class="col-xs-12 text-center" id="top-bar">
+    <div class="col-xs-6 text-center">
         <h1>Eat-Da-Burger</h1>
     </div>
 
-    <div class="col-xs-6 text-center" id="task">
-        <div class="row">
+    <div>
+        <div>
         {{!-- Go through burger data --}}
+        {{#each burgers}} 
+        <div class="col-xs-6 text-center">
+        {{this.burger_name}}
+        <button class = "btn btn-primary" data-id = {{this.id}}>Devoure</button>
+        </div>
+        {{/each}}
         </div>
     </div>
 {{!--Add to database--}}
-    
-<div class="col-xs-6 text-center md-1" id="task">
-
+<div class="col-xs-6 text-center" >
+{{!-- on click of submit add new burger to list above --}}
+    <h1>Devoured</h1>
 </div>
 
 {{!-- Add new burger --}}
+<div class="col-xs-6 text-center">
 <h2>Add a Burger</h2>
-<form class="create-form">
-
+<form class="create-form" method = "Post" action = "/api/burgers">
+<input type = "text" name = "burger_name">
+<input type = "submit" class = "btn btn-primary">
 </form>
+</div>
