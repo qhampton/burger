@@ -12,6 +12,7 @@ var orm = {
     },
     insertOne: function (tableName, columnName, value, cb) {
         var query = "INSERT INTO ?? (??) VALUES (?)";
+        console.log( [tableName, columnName, value]);
         connection.query(query, [tableName, columnName, value], function (err, result) {
             if (err) throw err;
             cb(result);
